@@ -1,0 +1,5 @@
+PROJECT_NAME           = "Range Search Project"
+OUTPUT_DIRECTORY       = ./doc
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+EXTRACT_ALL            = YES

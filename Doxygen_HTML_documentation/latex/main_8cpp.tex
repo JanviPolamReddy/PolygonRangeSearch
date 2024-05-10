@@ -1,0 +1,169 @@
+\doxysection{main.\+cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{main.cpp@{main.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$ANN/\+ANN.\+h$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include \"{}json.\+hpp\"{}}\newline
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{main_8cpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} = nlohmann\+::json
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_adb9836b89e78bbca7ada57192ab98304}{write\+Inside\+Counts\+To\+Json}} (const std\+::vector$<$ unsigned int $>$ \&inside\+Counts, const std\+::string \&output\+File\+Path)
+\begin{DoxyCompactList}\small\item\em Writes the inside counts to a JSON file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a11a797ad64898a09bb5d3edd9702d118}{write\+Inside\+Points\+Indices\+To\+Json}} (const std\+::vector$<$ std\+::vector$<$ unsigned int $>$ $>$ \&inside\+Points\+Indices, const std\+::string \&output\+File\+Path)
+\begin{DoxyCompactList}\small\item\em Writes the inside points indices to a JSON file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{main_8cpp_a1d9906f241b8f9f035a1403acd56e131}{are\+Json\+Files\+Same}} (const std\+::string \&file\+Path1, const std\+::string \&file\+Path2, bool count\+Check)
+\begin{DoxyCompactList}\small\item\em Compares two JSON files for equality. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a31be893a322a0661bf6f76ee186b4377}{load\+From\+File}} (const std\+::string \&point\+File\+Path, const std\+::string \&query\+File\+Path, std\+::vector$<$ Point $>$ \&points, std\+::vector$<$ std\+::vector$<$ Point $>$ $>$ \&polygons)
+\begin{DoxyCompactList}\small\item\em Loads points and polygons from JSON files. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{main_8cpp_a6d0c3592c479be9990e9921d243c94ef}{contains\+Point}} (const std\+::vector$<$ Point $>$ \&vertices, const Point \&p)
+\begin{DoxyCompactList}\small\item\em Checks if a point is contained within a polygon. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a97c41b18c82e20e37f6694f361b47c7d}{test\+Range\+Search\+From\+File}} (const std\+::string \&point\+File\+Path, const std\+::string \&query\+File\+Path, const std\+::string \&test\+Folder\+Path)
+\begin{DoxyCompactList}\small\item\em Performs range search tests using input files and writes the results to output files. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Main function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{main_8cpp_ab701e3ac61a85b337ec5c1abaad6742d}\label{main_8cpp_ab701e3ac61a85b337ec5c1abaad6742d} 
+\index{main.cpp@{main.cpp}!json@{json}}
+\index{json@{json}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{json}{json}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{json_8hpp_ae6eede511f01c9f33342044d36a388fa}{json}} =  nlohmann\+::json}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_a1d9906f241b8f9f035a1403acd56e131}\label{main_8cpp_a1d9906f241b8f9f035a1403acd56e131} 
+\index{main.cpp@{main.cpp}!areJsonFilesSame@{areJsonFilesSame}}
+\index{areJsonFilesSame@{areJsonFilesSame}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{areJsonFilesSame()}{areJsonFilesSame()}}
+{\footnotesize\ttfamily bool are\+Json\+Files\+Same (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path1,  }\item[{const std\+::string \&}]{file\+Path2,  }\item[{bool}]{count\+Check }\end{DoxyParamCaption})}
+
+
+
+Compares two JSON files for equality. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path1} & The path to the first JSON file. \\
+\hline
+{\em file\+Path2} & The path to the second JSON file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the JSON files are the same, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{main_8cpp_a6d0c3592c479be9990e9921d243c94ef}\label{main_8cpp_a6d0c3592c479be9990e9921d243c94ef} 
+\index{main.cpp@{main.cpp}!containsPoint@{containsPoint}}
+\index{containsPoint@{containsPoint}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{containsPoint()}{containsPoint()}}
+{\footnotesize\ttfamily bool contains\+Point (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Point $>$ \&}]{vertices,  }\item[{const Point \&}]{p }\end{DoxyParamCaption})}
+
+
+
+Checks if a point is contained within a polygon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertices} & The vertices of the polygon. \\
+\hline
+{\em p} & The point to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the point is inside the polygon, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{main_8cpp_a31be893a322a0661bf6f76ee186b4377}\label{main_8cpp_a31be893a322a0661bf6f76ee186b4377} 
+\index{main.cpp@{main.cpp}!loadFromFile@{loadFromFile}}
+\index{loadFromFile@{loadFromFile}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{loadFromFile()}{loadFromFile()}}
+{\footnotesize\ttfamily void load\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{point\+File\+Path,  }\item[{const std\+::string \&}]{query\+File\+Path,  }\item[{std\+::vector$<$ Point $>$ \&}]{points,  }\item[{std\+::vector$<$ std\+::vector$<$ Point $>$ $>$ \&}]{polygons }\end{DoxyParamCaption})}
+
+
+
+Loads points and polygons from JSON files. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point\+File\+Path} & The path to the JSON file containing points. \\
+\hline
+{\em query\+File\+Path} & The path to the JSON file containing polygons. \\
+\hline
+{\em points} & The vector to store the loaded points. \\
+\hline
+{\em polygons} & The vector to store the loaded polygons. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Main function. 
+
+\begin{DoxyReturn}{Returns}
+0 on successful execution. 
+\end{DoxyReturn}
+\Hypertarget{main_8cpp_a97c41b18c82e20e37f6694f361b47c7d}\label{main_8cpp_a97c41b18c82e20e37f6694f361b47c7d} 
+\index{main.cpp@{main.cpp}!testRangeSearchFromFile@{testRangeSearchFromFile}}
+\index{testRangeSearchFromFile@{testRangeSearchFromFile}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{testRangeSearchFromFile()}{testRangeSearchFromFile()}}
+{\footnotesize\ttfamily void test\+Range\+Search\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{point\+File\+Path,  }\item[{const std\+::string \&}]{query\+File\+Path,  }\item[{const std\+::string \&}]{test\+Folder\+Path }\end{DoxyParamCaption})}
+
+
+
+Performs range search tests using input files and writes the results to output files. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point\+File\+Path} & The path to the JSON file containing points. \\
+\hline
+{\em query\+File\+Path} & The path to the JSON file containing polygons. \\
+\hline
+{\em test\+Folder\+Path} & The path to the test folder. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8cpp_adb9836b89e78bbca7ada57192ab98304}\label{main_8cpp_adb9836b89e78bbca7ada57192ab98304} 
+\index{main.cpp@{main.cpp}!writeInsideCountsToJson@{writeInsideCountsToJson}}
+\index{writeInsideCountsToJson@{writeInsideCountsToJson}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{writeInsideCountsToJson()}{writeInsideCountsToJson()}}
+{\footnotesize\ttfamily void write\+Inside\+Counts\+To\+Json (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ unsigned int $>$ \&}]{inside\+Counts,  }\item[{const std\+::string \&}]{output\+File\+Path }\end{DoxyParamCaption})}
+
+
+
+Writes the inside counts to a JSON file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inside\+Counts} & The vector of inside counts. \\
+\hline
+{\em output\+File\+Path} & The path to the output JSON file. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8cpp_a11a797ad64898a09bb5d3edd9702d118}\label{main_8cpp_a11a797ad64898a09bb5d3edd9702d118} 
+\index{main.cpp@{main.cpp}!writeInsidePointsIndicesToJson@{writeInsidePointsIndicesToJson}}
+\index{writeInsidePointsIndicesToJson@{writeInsidePointsIndicesToJson}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{writeInsidePointsIndicesToJson()}{writeInsidePointsIndicesToJson()}}
+{\footnotesize\ttfamily void write\+Inside\+Points\+Indices\+To\+Json (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ unsigned int $>$ $>$ \&}]{inside\+Points\+Indices,  }\item[{const std\+::string \&}]{output\+File\+Path }\end{DoxyParamCaption})}
+
+
+
+Writes the inside points indices to a JSON file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inside\+Points\+Indices} & The vector of inside points indices. \\
+\hline
+{\em output\+File\+Path} & The path to the output JSON file. \\
+\hline
+\end{DoxyParams}
