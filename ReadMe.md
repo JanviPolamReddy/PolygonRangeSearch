@@ -12,7 +12,18 @@ testRangeSearchFromFile: Performs polygon range search on input points and polyg
 main: Iterates over test folders, calls testRangeSearchFromFile for each test case, and reports accuracy and performance.
 
 Compilation:
-
-
+1.Download the project zip file and extract it to your desired location.
+2.Open a terminal or command prompt and navigate to the project folder:
+cd /path/to/your/project/folder
+3.Once you are inside the project folder, compile the project by running the following command:
+make
+4.This will compile the source files and generate the executable.
 
 Execution:
+After successfully compiling the project, you can run the range search executable using the following commands:
+chmod +x rangesearch
+./rangesearch
+This command will execute the code for all the test cases and display the output in the terminal.
+
+TestCases:
+The project includes test cases to validate the implementation of the range search algorithm. When you run the ./rangesearch command, it automatically executes all the test cases and prints the corresponding output.
